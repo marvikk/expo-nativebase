@@ -1,29 +1,23 @@
 import React from 'react';
 import { AppLoading } from 'expo';
-import { Container,
+import { 
+  Container,
   StyleProvider,
-  Header,
-  Title,
   Content,
-  Text,
-  Button,
-  Icon,
-  Footer,
-  FooterTab,
-  Left,
-  Right,
-  Body
+  Text
  } from 'native-base';
-import {View} from 'react-native';
 import * as Font from 'expo-font';
 import { Ionicons } from '@expo/vector-icons';
-import styles from './styles'
+import styles from './src/screens/styles'
 
 import getTheme from './native-base-theme/components';
 import material from './native-base-theme/variables/material';
-import platform from './native-base-theme/variables/platform';
-import common from './native-base-theme/variables/commonColor';
-import custom from './native-base-theme/variables/variables';
+// import platform from './native-base-theme/variables/platform';
+// import common from './native-base-theme/variables/commonColor';
+// import custom from './native-base-theme/variables/variables';
+
+import ButtonLayout from './src/screens/ButtonLayout';
+import HeaderComponent from './src/screens/Header';
 
 export default class App extends React.Component {
   constructor(props) {
@@ -48,50 +42,15 @@ export default class App extends React.Component {
     }
 
     return (
+      <StyleProvider style={getTheme(material)}>
       <Container style={styles.container}>
-        <Header>
-          <Left>
-            <Button
-              transparent
-              onPress={() => this.props.navigation.navigate("DrawerOpen")}
-            >
-              <Icon name="ios-menu" />
-            </Button>
-          </Left>
-          <Body>
-            <Title>Header</Title>
-          </Body>
-          <Right />
-        </Header>
+        <HeaderComponent />
         <Content padder style={{ backgroundColor: "#fff", padding: 20 }}>
-        <Body style={styles.buttonContainer}>
-          <Left>
-          <Button rounded light style={styles.mb15}>
-            <Text>Light</Text>
-          </Button>
-          <Button rounded info style={styles.mb15}>
-            <Text>Info</Text>
-          </Button>
-          <Button primary style={styles.mb15}>
-            <Text>Primary</Text>
-          </Button>
-          <Button success style={styles.mb15}>
-            <Text>Success</Text>
-          </Button>
-          <Button warning style={styles.mb15}>
-            <Text>Warning</Text>
-          </Button>
-          <Button danger style={styles.mb15}>
-            <Text>Danger</Text>
-          </Button>
-          <Button dark style={styles.mb15}>
-            <Text>Dark</Text>
-          </Button>
-          </Left>
-        
-        </Body>
+          <Text>This text should be red</Text>
+        <ButtonLayout />
         </Content>
       </Container>
+      </StyleProvider>
       
     );
   }
