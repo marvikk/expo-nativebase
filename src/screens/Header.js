@@ -20,7 +20,7 @@ export default () => {
             </Button>
           </Left>
           <Body>
-            <Title>Header</Title>
+            <Title>Charades</Title>
           </Body>
           <Right />
         </Header>

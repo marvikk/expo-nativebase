@@ -4,7 +4,7 @@ const { StyleSheet } = React;
 
 export default {
   container: {
-    backgroundColor: "#FFF"
+    backgroundColor: "lightgrey"
   },
   buttonContainer: {
     flexDirection: "column",
@@ -36,5 +36,11 @@ export default {
     flexGrow: 1,
     alignSelf: "center",
     alignItems: "center"
+  },
+  padded: {
+    padding: 20
+  },
+  centered: {
+    justifyContent: 'center'
   }
 };
